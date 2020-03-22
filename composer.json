@@ -1,0 +1,48 @@
+{
+    "name": "trip-microservices/currency-exchange",
+    "type": "package",
+    "description": "Implementation of currency exchange microservice",
+    "keywords": ["php","currency", "exchange"],
+    "license": "dcs+",
+    "authors": [
+        {
+            "name": "Andra-Mihaela State",
+            "email": "andra.state@dcsplus.net",
+            "role": "Developer"
+        }
+    ],
+	"config": {
+		"secure-http": false
+	},
+    "repositories": [
+        {
+            "url":  "git@gitlab.dcs:trip-libraries/db-filter.git",
+            "type": "git"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"MicroIceExchangeRate\\": "src/MicroIceExchangeRate"}
+    },
+    "scripts": {
+        "pre-update-cmd": [
+            "sh standalone.install.sh MicroIceExchangeRate"
+        ]
+    },
+    "require": {
+        "php": "^5.5 || ^7.0",
+        "trip-libraries/db-filter": "dev-master",
+        "zendframework/zend-db": "~2.6",
+        "zfcampus/zf-apigility": "~1.0",
+        "zfcampus/zf-apigility-documentation": "^1.0.5",
+        "zfcampus/zf-development-mode": "^3.0",
+        "phpmailer/phpmailer": "dev-master"
+    },
+    "require-dev": {
+        "zendframework/zftool": "dev-master",
+        "zendframework/zend-developer-tools": "1.0.*",
+        "zfcampus/zf-apigility-admin": "^1.4.1",
+        "zfcampus/zf-apigility-admin-ui": "^1.2.3",
+        "zfcampus/zf-deploy": "~1.0",
+        "phpunit/phpunit": "4.8.26"
+    }
+}

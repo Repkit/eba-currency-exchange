@@ -1,0 +1,44 @@
+<?php
+$currencyExchangeSettings = array(
+    'openexchangerates_app_id' => '',
+    'mailer_url' => '',
+    'admin_email' => '',
+//    'db' => array(
+//        'driver'   => 'Pdo',
+//        'dsn'            => 'mysql:dbname=adrian.tanase;host=192.168.1.15',
+//        'driver_options' => array(
+//                          PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
+//                    ),
+//        'username'       => 'adrian.tanase',
+//        'password'       => 'tzue321'
+//    ),
+    
+    'currency_exchange' => array(
+        'storage' => array(
+            'joins' => array(
+                'inner' => array(
+                    array(
+                        'table' => array('from_currency' => 'currencies'),
+                        'on' => 'currency_exchange.BaseCurrencyId = from_currency.Id',
+                        'columns' => array('From' => 'Code')
+                    ),
+                    array(
+                        'table' => array('to_currency' => 'currencies'),
+                        'on' => 'currency_exchange.TargetCurrencyId = to_currency.Id',
+                        'columns' => array('To' => 'Code')
+                    ),
+                ),
+                'left' => array(array()),
+                'right' => array(array()),
+            ),
+            'where' => array(
+                'external_columns' => array(
+                    'From' => 'from_currency.Code',
+                    'To'   => 'to_currency.Code',
+                ),
+            ),
+        ),
+    ),
+);
+
+return array('currency_exchange_settings' => $currencyExchangeSettings);
