@@ -3,16 +3,6 @@ $currencyExchangeSettings = array(
     'openexchangerates_app_id' => '',
     'mailer_url' => '',
     'admin_email' => '',
-//    'db' => array(
-//        'driver'   => 'Pdo',
-//        'dsn'            => 'mysql:dbname=adrian.tanase;host=192.168.1.15',
-//        'driver_options' => array(
-//                          PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
-//                    ),
-//        'username'       => 'adrian.tanase',
-//        'password'       => 'tzue321'
-//    ),
-    
     'currency_exchange' => array(
         'storage' => array(
             'joins' => array(
