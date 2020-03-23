@@ -3,15 +3,8 @@
     "type": "package",
     "description": "Implementation of currency exchange microservice",
     "keywords": ["php","currency", "exchange"],
-    "license": "dcs+",
-    "authors": [
-        {
-            "name": "Andra-Mihaela State",
-            "email": "andra.state@dcsplus.net",
-            "role": "Developer"
-        }
-    ],
-	"config": {
+    "license": "repkit",
+    	"config": {
 		"secure-http": false
 	},
     "repositories": [
